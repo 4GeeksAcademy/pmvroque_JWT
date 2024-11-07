@@ -17,9 +17,26 @@ const getState = ({ getStore, getActions, setStore }) => {
 		},
 		actions: {
 			// Use getActions to call a function within a fuction
-			exampleFunction: () => {
-				getActions().changeColor(0, "green");
+			signUpUser: async (user) => {
+
 			},
+
+			// getUser: () => {
+			// 	const token = sessionStorage.getItem("token");
+			// 	fetch('/user', {
+			// 		headers: {
+			// 			'Authorization' : `Bearer ${token}` 
+			// 		}
+			// 	})
+			// 	.then(response => response.json())
+			// 	.then(data => {
+			// 		//Set user information in the store
+			// 	})
+			// },
+			
+			// exampleFunction: () => {
+			// 	getActions().changeColor(0, "green");
+			// },
 
 			getMessage: async () => {
 				try{
