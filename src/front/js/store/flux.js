@@ -30,6 +30,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 				let data = await response.json()
 				sessionStorage.setItem("token", data.access_token);
 				console.log(sessionStorage.getItem("token"))
+				console.log(data, data.token)
 			},
 
 			signUpUser: async (user) => {
