@@ -17,6 +17,21 @@ const getState = ({ getStore, getActions, setStore }) => {
 		},
 		actions: {
 			// Use getActions to call a function within a fuction
+
+			login: async (email, password) => {
+				let response = await fetch(process.env.BACKEND_URL + "/login", {
+					method: "POST",
+					headers: { "Content-type": "application/json" },
+					body: JSON.stringify({ 
+						email: email,
+						password: password
+					})
+				})
+				let data = await response.json()
+				sessionStorage.setItem("token", data.access_token);
+				console.log(sessionStorage.getItem("token"))
+			},
+
 			signUpUser: async (user) => {
 
 			},
